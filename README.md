@@ -2,7 +2,7 @@
 Design for DDD architecture example .NET Standard, .NET Core 3.0 and Entity Framework Core. 
 
 # Getting Started
-Guide users through getting your code up and running on their own system. In this section you can talk about:
+This project was created to understand the DDD architecture based on a .NET project.
 1.	Debug
 2.	Software Dependencies
 
