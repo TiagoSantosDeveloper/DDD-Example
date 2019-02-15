@@ -6,7 +6,7 @@ Guide users through getting your code up and running on their own system. In thi
 1.	Debug
 2.	Software Dependencies
 
-# 2. Debug
+# 1. Debug
 To debug the project, use the user registration form and run the database script that is in the SQLServer folder.
 Create a database with the name SonicParksNex.
 
