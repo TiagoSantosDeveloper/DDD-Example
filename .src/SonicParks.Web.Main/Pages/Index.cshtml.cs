@@ -10,7 +10,7 @@ using System.Threading;
 using SonicParks.Core.Application.Interfaces.AppServices;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace SonicParks.Marketplace.Main.Pages {
+namespace SonicParks.Web.Main.Pages {
 
     public class IndexModel : PageModel {
 

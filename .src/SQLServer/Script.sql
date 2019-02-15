@@ -1,0 +1,58 @@
+/*Create a database with the name SonicParksNex*/
+USE [SonicParksNex]
+GO
+
+/****** Object:  Table [dbo].[Emails]    Script Date: 15/02/2019 16:05:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Emails](
+	[EmailID] [int] IDENTITY(1,1) NOT NULL,
+	[Email] [nvarchar](250) NOT NULL,
+	[Active] [bit] NOT NULL,
+ CONSTRAINT [PK_Emails] PRIMARY KEY CLUSTERED 
+(
+	[EmailID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Users](
+	[UserID] [int] IDENTITY(1,1) NOT NULL,
+	[Login] [nvarchar](50) NOT NULL,
+	[Password] [nchar](32) NOT NULL,
+	[Active] [bit] NOT NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[UserID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[UsersEmails](
+	[UserID] [int] NOT NULL,
+	[EmailID] [int] NOT NULL,
+ CONSTRAINT [PK_UsersEmails] PRIMARY KEY CLUSTERED 
+(
+	[UserID] ASC,
+	[EmailID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[UsersEmails]  WITH CHECK ADD  CONSTRAINT [FK_UsersEmails_Emails] FOREIGN KEY([EmailID])
+REFERENCES [dbo].[Emails] ([EmailID])
+GO
+
+ALTER TABLE [dbo].[UsersEmails] CHECK CONSTRAINT [FK_UsersEmails_Emails]
+GO
+
+ALTER TABLE [dbo].[UsersEmails]  WITH CHECK ADD  CONSTRAINT [FK_UsersEmails_Users] FOREIGN KEY([UserID])
+REFERENCES [dbo].[Users] ([UserID])
+GO
+
+ALTER TABLE [dbo].[UsersEmails] CHECK CONSTRAINT [FK_UsersEmails_Users]
+GO

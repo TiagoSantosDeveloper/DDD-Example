@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SonicParks.Core.CrossCutting.IoC.AutoMapping;
 using SonicParks.Core.CrossCutting.IoC.DependencyInjection;
 
-namespace SonicParks.Marketplace.Main {
+namespace SonicParks.Web.Main {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
