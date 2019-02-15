@@ -1,0 +1,110 @@
+﻿@model IndexModel
+<!-- Sign In Popup
+================================================== -->
+<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+    <!--Tabs -->
+    <div class="sign-in-form">
+
+        <ul class="popup-tabs-nav">
+            <li><a href="#login">@Labels.LoginIn</a></li>
+            <li><a href="#register">@Labels.Register</a></li>
+        </ul>
+
+        <div class="popup-tabs-container">
+
+            <!-- Login -->
+            <div class="popup-tab-content" id="login">
+
+                <!-- Welcome Text -->
+                <div class="welcome-text">
+                    <h3>@Labels.WereGladToSeeYouAgain</h3>
+                    <span>@Labels.DontHaveAnAccount <a href="#" class="register-tab">@Labels.SignUp</a></span>
+                </div>
+
+                <!-- Form -->
+                <form method="post" id="login-form" name="login-form">
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-baseline-mail-outline"></i>
+                        <input asp-for="UserLoginViewModel.Email" class="input-text with-border" placeholder="@Labels.EmailAddress" />
+                        <span asp-validation-for="UserLoginViewModel.Email" class="alert-danger"></span>
+                    </div>
+
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-lock"></i>
+                        <input asp-for="UserLoginViewModel.Password" class="input-text with-border" placeholder="@Labels.Password" />
+                        <span asp-validation-for="UserLoginViewModel.Password" class=""></span>
+                    </div>
+                    <a href="#" class="forgot-password">@Labels.ForgotPassword</a>
+                </form>
+
+                <!-- Button -->
+                <button asp-page-handler="Login" class="button full-width button-sliding-icon ripple-effect" type="submit" form="login-form">@Labels.LoginIn <i class="icon-material-outline-arrow-right-alt"></i></button>
+
+                <!-- Social Login -->
+                <div class="social-login-separator"><span>@Labels.Or</span></div>
+                <div class="social-login-buttons">
+                    <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> @Labels.LoginInViaFacebook</button>
+                    <button class="google-login ripple-effect"><i class="icon-brand-google"></i> @Labels.LoginInViaGoogle</button>
+                </div>
+
+            </div>
+
+            <!-- Register -->
+            <div class="popup-tab-content" id="register">
+
+                <!-- Welcome Text -->
+                <div class="welcome-text">
+                    <h3>@Labels.LetsCreateYourAccount</h3>
+                </div>
+
+                <!-- Account Type -->
+                <div class="account-type">
+                    <div>
+                        <input type="radio" name="account-type-radio" id="freelancer-radio" class="account-type-radio" />
+                        <label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> @Labels.Freelancer</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio" checked />
+                        <label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> @Labels.Company</label>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form asp-page-handler="Register" method="post" id="register-account-form" name="register-account-form">
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-baseline-mail-outline"></i>
+                        <input asp-for="UserRegisterViewModel.Email" class="input-text with-border" placeholder="@Labels.EmailAddress" />
+                        <span asp-validation-for="UserRegisterViewModel.Email" class=""></span>
+                    </div>
+
+                    <div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
+                        <i class="icon-material-outline-lock"></i>
+                        <input asp-for="UserRegisterViewModel.NewPassword" class="input-text with-border" placeholder="@Labels.Password" />
+                        <span asp-validation-for="UserRegisterViewModel.NewPassword" class=""></span>
+                    </div>
+
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-lock"></i>
+                        <input asp-for="UserRegisterViewModel.NewPasswordConfirm" class="input-text with-border" placeholder="@Labels.RepeatPassword" />
+                        <span asp-validation-for="UserRegisterViewModel.NewPasswordConfirm" class=""></span>
+                    </div>
+                </form>
+
+                <!-- Button -->
+                <button asp-page-handler="Register" class="margin-top-10 button full-width button-sliding-icon ripple-effect" type="submit" form="register-account-form">@Labels.Register <i class="icon-material-outline-arrow-right-alt"></i></button>
+
+                <!-- Social Login -->
+                <div class="social-login-separator"><span>@Labels.Or</span></div>
+                <div class="social-login-buttons">
+                    <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> @Labels.RegisterViaFacebook</button>
+                    <button class="google-login ripple-effect"><i class="icon-brand-google"></i> @Labels.RegisterViaGoogle</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Sign In Popup / End -->

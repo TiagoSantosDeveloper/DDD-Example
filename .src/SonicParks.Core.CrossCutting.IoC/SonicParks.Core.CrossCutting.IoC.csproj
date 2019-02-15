@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SonicParks.Core.Application\SonicParks.Core.Application.csproj" />
+    <ProjectReference Include="..\SonicParks.Core.CrossCutting.AutoMap\SonicParks.Core.CrossCutting.AutoMap.csproj" />
+    <ProjectReference Include="..\SonicParks.Core.Infrastructure.Data\SonicParks.Core.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>

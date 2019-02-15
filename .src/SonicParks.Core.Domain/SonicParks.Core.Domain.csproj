@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SonicParks.Core.CrossCutting.Enumerator\SonicParks.Core.CrossCutting.Enumerator.csproj" />
+    <ProjectReference Include="..\SonicParks.Core.CrossCutting.Locality\SonicParks.Core.CrossCutting.Locality.csproj" />
+    <ProjectReference Include="..\SonicParks.Core.CrossCutting.Util\SonicParks.Core.CrossCutting.Util.csproj" />
+  </ItemGroup>
+
+</Project>
